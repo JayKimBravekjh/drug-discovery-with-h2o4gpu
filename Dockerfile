@@ -79,7 +79,8 @@ RUN ${PIP} --no-cache-dir install --upgrade \
     setuptools
 
 # Install H2O4GPU for CUDA 10
-RUN conda create -n h2o4gpuenv -c h2oai -c conda-forge h2o4gpu-cuda92
+RUN conda install -n h2o4gpuenv -c h2oai h2o4gpu-cuda10 
+# CUDA 9: RUN conda create -n h2o4gpuenv -c h2oai -c conda-forge h2o4gpu-cuda92
 RUN conda init bash
 RUN /bin/bash -c conda activate h2o4gpuenv
 
