@@ -44,9 +44,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y --fix-mi
 
 # Install TensorRT (TPU Access)
 RUN apt-get update && \
-        apt-get install nvinfer-runtime-trt-repo-ubuntu1804-5.0.2-ga-cuda10.0 && \
+        apt-get install -y nvinfer-runtime-trt-repo-ubuntu1804-5.0.2-ga-cuda10.0 && \
         apt-get update && \
-        apt-get install libnvinfer5=5.0.2-1+cuda10.0
+        apt-get install -y libnvinfer5=5.0.2-1+cuda10.0
 
 RUN file="$(ls -1 /usr/local/)" && echo $file
 
